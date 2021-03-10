@@ -45,7 +45,7 @@ function setup() {
   lava=createSprite(width/2-75,height-5,245,height-385)
   lava.addImage(lavaIMG);
 
-  bunny=createSprite(width-300,height-75,10,10);
+  bunny=createSprite(50,height-75,10,10);
   bunny.addAnimation("standing",bunnyStop);
   bunny.addAnimation("running",bunnyIMG);
 
