@@ -15,7 +15,7 @@ var dieSound;
 var spaceKeyPressed=25;
 var black;
 var cloud,cloudGroup,cloudImage;
-var biginningSound;
+
 
 function preload(){
   bunnyIMG=loadAnimation("bunny_running_1.png","bunny_running_2.png");
@@ -29,7 +29,8 @@ function preload(){
   youWonSound=loadSound("you win.mp4");
   dieSound=loadSound("die.mp3");
   cloudImage=loadImage("cloud.png");
-  
+
+
 }
 
 function setup() {
