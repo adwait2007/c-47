@@ -29,8 +29,7 @@ function preload(){
   youWonSound=loadSound("you win.mp4");
   dieSound=loadSound("die.mp3");
   cloudImage=loadImage("cloud.png");
-  biginningSound=loadSound("biginning sound.mp4");
-
+  
 }
 
 function setup() {
