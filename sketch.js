@@ -15,6 +15,7 @@ var dieSound;
 var spaceKeyPressed=25;
 var black;
 var cloud,cloudGroup,cloudImage;
+var logo,logoImage;
 
 
 function preload(){
@@ -29,6 +30,7 @@ function preload(){
   youWonSound=loadSound("you win.mp4");
   dieSound=loadSound("die.mp3");
   cloudImage=loadImage("cloud.png");
+  logoImage=loadImage("logo.png");
 
 
 }
@@ -38,24 +40,33 @@ function setup() {
 
   ground1=createSprite(50,height-10,250,height-380);
   ground1.addImage(groundIMG);
+  ground1.visible=false;
 
   ground2=createSprite(width-200,height-10,200,height-380);
   ground2.addImage(groundIMG);
+  ground2.visible=false;
 
   lava=createSprite(width/2-75,height-5,245,height-385)
   lava.addImage(lavaIMG);
+  lava.visible=false;
 
   bunny=createSprite(50,height-75,10,10);
   bunny.addAnimation("standing",bunnyStop);
   bunny.addAnimation("running",bunnyIMG);
+  bunny.visible=false;
 
   carrot=createSprite(width-200,height-70,200,height-380);
   carrot.addImage(carrotIMG);
+  carrot.visible=false;
 
   gameOver=createSprite(windowWidth/2,windowHeight/2,10,10);
   gameOver.addImage(gamerOverIMG);
   gameOver.scale=0.5
   gameOver.visible=false;
+
+  logo=createSprite(windowWidth/2,175);
+  logo.addImage(logoImage);
+  logo.visible=true;
 
   ground=[ground1,ground2];
 
@@ -72,16 +83,22 @@ function draw() {
 
     textSize(30);
     fill("yellow");
-    text("Press s Key To Start",windowWidth/2-200,windowHeight/2-50);
+    text("Press s Key To Start",windowWidth/2-200,windowHeight/2+50);
 
     textSize(20);
-    text("you have 5 life and 25 jumps to cross the lava using space key",windowWidth/2-200,windowHeight/2-25);
+    text("you have 5 life and 25 jumps to cross the lava using space key",windowWidth/2-250,windowHeight/2+75);
 
     if(keyDown("s")){
       gameState=PLAY;
+      ground1.visible=true;
+      ground2.visible=true;
+      lava.visible=true;
+      bunny.visible=true;
+      carrot.visible=true;
+      logo.visible=false;
     }
 
-  }else {  
+  }  
 
   if(gameState===PLAY){
 
@@ -203,7 +220,7 @@ function draw() {
     fill("blue");
     text("Press 'r' To Restart",windowWidth/2-100,windowHeight/2+50);
   }
-}
+
 
 }
 
