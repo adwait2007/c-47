@@ -83,10 +83,16 @@ function draw() {
 
     textSize(30);
     fill("yellow");
-    text("Press s Key To Start",windowWidth/2-200,windowHeight/2+50);
-
-    textSize(20);
-    text("you have 5 life and 25 jumps to cross the lava using space key",windowWidth/2-250,windowHeight/2+75);
+    text("Press s Key To Start",windowWidth/2-250,windowHeight/2+50);
+    text("Movements:you can use left arrow & right arrow key move",windowWidth/2-250,windowHeight/2+150);
+    text("Jump:you can jump with space key",windowWidth/2-250,windowHeight/2+200);
+    text("you have 5 life and 25 jumps to cross the lava using space key",windowWidth/2-250,windowHeight/2+100);
+    stroke("yellow");
+    strokeWeight(20);
+    point(windowWidth/2-270,windowHeight/2+40);
+    point(windowWidth/2-270,windowHeight/2+140);
+    point(windowWidth/2-270,windowHeight/2+90);
+    point(windowWidth/2-270,windowHeight/2+190);
 
     if(keyDown("s")){
       gameState=PLAY;
@@ -205,6 +211,7 @@ function draw() {
 
   drawSprites();
   textSize(25);
+  noStroke();
   fill("white");
   text("Carrots Eaten:"+score,windowWidth-200,80);
   text("Life:"+life,windowWidth-200,110);
